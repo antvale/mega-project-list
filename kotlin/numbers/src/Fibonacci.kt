@@ -37,7 +37,9 @@ fun main (args:Array<String>){
 
     println("Fibonacci value for F($n) is ${fastFibonacci(n)}")
 
-    println("Fibonacci sequence up to F($n)")
+    println("Last 4 Fibonacci sequence numbers up to F($n)")
+
+    print("...")
 
     // print the last 4 numbers
     for (i in (n-3)..(n-1))
@@ -63,15 +65,15 @@ fun fibonacci(n:Long):Long{
  */
 fun fastFibonacci(n:Long):BigInteger{
 
-    var result:BigInteger= BigInteger.ZERO
+    var current:BigInteger= BigInteger.ZERO
     var next: BigInteger=BigInteger.ONE
     var tmp:BigInteger
 
     for (i in 0..(n-1)){
-        tmp=result
-        result=next
+        tmp=current
+        current=next
         next=tmp.add(next)
     }
 
-    return result;
+    return current;
 }
